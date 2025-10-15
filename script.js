@@ -3,7 +3,8 @@ const prevBtn = document.querySelector('#prev');
 const slides = document.querySelector('#slides');
 const pictureFrame = document.querySelector('#picture-frame');
 
-let x = 1;
+let x = 0;
+slides.children[x].classList.add('active');
 
 pictureFrame.addEventListener('click', (e) => {
     if (e.target.id === 'next' || e.target.id === 'prev') {
@@ -13,17 +14,10 @@ pictureFrame.addEventListener('click', (e) => {
 
 function move(dir) {
     if (dir === 'next') {
-        if (x >= 6) {
-            x = 0;
-        }
-        slides.style.transform = `translateX(-${x*50}vw)`;
-        x++;
+        x = (x+1)%6;
     }
     else {
-        if (x === 1) {
-            x = 7;
-        }
-        slides.style.transform = `translateX(-${(x-2)*50}vw)`;
-        x--;
+        x = (x-1+6)%6;
     }
+    slides.style.transform = `translateX(-${(x)*50}vw)`;
 }

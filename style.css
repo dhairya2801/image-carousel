@@ -20,6 +20,11 @@ body {
     height: 40vh;
     width: 50vw;
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 900;
 }
 
 #next {
@@ -34,5 +39,5 @@ body {
 }
 
 .active {
-    background-color: green;
+    background-color: mediumslateblue;
 }
