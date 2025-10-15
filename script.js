@@ -13,11 +13,16 @@ pictureFrame.addEventListener('click', (e) => {
 
 function move(dir) {
     if (dir === 'next') {
+        if (x >= 6) {
+            x = 0;
+        }
         slides.style.transform = `translateX(-${x*50}vw)`;
-        console.log(`translateX(-${x*50}vw)`);
-        (x === 5) ? x = 0 : x++;
+        x++;
     }
     else {
+        if (x === 1) {
+            x = 7;
+        }
         slides.style.transform = `translateX(-${(x-2)*50}vw)`;
         x--;
     }
